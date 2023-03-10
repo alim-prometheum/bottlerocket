@@ -1,7 +1,7 @@
 [package]
 name = "rapid7-insight-agent"
 version = "0.1.0"
-edition = "2023"
+edition = "2018"
 publish = false
 build = "build.rs"
 
@@ -9,11 +9,7 @@ build = "build.rs"
 path = "pkg.rs"
 
 [package.metadata.build-package]
-releases-url = "https://github.com/kubernetes-sigs/aws-iam-authenticator/releases"
-
-[[package.metadata.build-package.external-files]]
-url = "https://github.com/kubernetes-sigs/aws-iam-authenticator/archive/v0.5.9/aws-iam-authenticator-0.5.9.tar.gz"
-sha512 = "1e1750f2734faea5cae612debb8777891247f59c51ad98e4c466bc20925950b1b04dc407458cfb0db9c3d961d1d9d07639523619399c5037211e8e6f64794fca"
+releases-url = "https://docs.rapid7.com/insight-agent"
 
 [build-dependencies]
 glibc = { path = "../glibc" }
