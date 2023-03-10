@@ -14,9 +14,6 @@ BuildRequires: %{_cross_os}glibc-devel
 %description
 %{summary}.
 
-%prep
-%autosetup -Sgit -n %{gorepo} -p1
-
 %build
 ./agent_installer.sh
 
