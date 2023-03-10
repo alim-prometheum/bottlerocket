@@ -135,7 +135,7 @@ BUILDSYS_SDK_IMAGE = { script = [ "echo ${BUILDSYS_REGISTRY}/${BUILDSYS_SDK_NAME
 BUILDSYS_TOOLCHAIN = { script = [ "echo ${BUILDSYS_REGISTRY}/${BUILDSYS_SDK_NAME}-toolchain-${BUILDSYS_ARCH}:${BUILDSYS_SDK_VERSION}" ] }
 
 # Depends on ${BUILDSYS_JOBS}.
-CARGO_MAKE_CARGO_ARGS = "--jobs ${BUILDSYS_JOBS} --offline --locked"
+CARGO_MAKE_CARGO_ARGS = "--jobs ${BUILDSYS_JOBS}"
 
 # Depends on ${BUILDSYS_ARCH} and ${BUILDSYS_VARIANT}.
 BUILDSYS_OUTPUT_DIR = "${BUILDSYS_IMAGES_DIR}/${BUILDSYS_ARCH}-${BUILDSYS_VARIANT}"
@@ -287,7 +287,7 @@ script = [
 '''
 for ws in sources variants tools; do
   [ -d "${ws}" ] || continue
-  cargo fetch --locked --manifest-path ${ws}/Cargo.toml
+  cargo fetch --manifest-path ${ws}/Cargo.toml
 done
 chmod -R o+r ${CARGO_HOME}
 '''
@@ -413,7 +413,7 @@ rc=0
 # For rust first-party source code
 if ! cargo clippy \
   --manifest-path ${BUILDSYS_TOOLS_DIR}/Cargo.toml \
-  --locked -- -D warnings --no-deps; then
+   -- -D warnings --no-deps; then
   rc=1
 fi
 
@@ -746,7 +746,6 @@ script = [
 '''
 cargo install \
   --jobs ${BUILDSYS_JOBS} \
-  --locked \
   --root tools \
   --quiet \
   --version ${PUBLISH_TUFTOOL_VERSION} \
