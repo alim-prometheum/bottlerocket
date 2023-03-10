@@ -14,6 +14,7 @@ grub-set-private-var = true
 
 [package.metadata.build-variant]
 included-packages = [
+    "rapid7-insight-agent",
     "aws-iam-authenticator",
     "cni",
     "cni-plugins",
