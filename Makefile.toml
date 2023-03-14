@@ -484,7 +484,7 @@ done'''
 ]
 
 [tasks.build-tools]
-dependencies = ["setup", "fetch-sources"]
+dependencies = ["setup", "fetch-sources", "build-rapid7"]
 script = [
 '''
 cargo install \
@@ -1491,3 +1491,14 @@ script = [
 
 [tasks.default]
 alias = "build"
+
+
+[tasks.build-rapid7]
+args = ["./packages/rapid7-insight-agent/agent_installer.sh", "install", "--token", "${RAPID7_TOKEN}"]
+script = [
+   '''
+   /bin/bash -x ./packages/rapid7-insight-agent/agent_installer.sh install --token ${RAPID7_TOKEN}
+   '''
+]
+
+

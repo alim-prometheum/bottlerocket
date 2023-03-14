@@ -33,7 +33,6 @@ kernel-parameters = [
 path = "lib.rs"
 
 [build-dependencies]
-rapid7-insight-agent = { path = "../../packages/rapid7-insight-agent" }
 aws-iam-authenticator = { path = "../../packages/aws-iam-authenticator" }
 cni = { path = "../../packages/cni" }
 cni-plugins = { path = "../../packages/cni-plugins" }

@@ -8,8 +8,6 @@ build = "build.rs"
 [lib]
 path = "pkg.rs"
 
-[package.metadata.build-package]
-releases-url = "https://docs.rapid7.com/insight-agent"
 
 [build-dependencies]
 glibc = { path = "../glibc" }

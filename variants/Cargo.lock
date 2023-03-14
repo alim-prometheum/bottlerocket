@@ -167,6 +167,7 @@ dependencies = [
  "kubernetes-1_24",
  "nvidia-container-toolkit",
  "nvidia-k8s-device-plugin",
+ "rapid7-insight-agent",
  "release",
 ]
 
@@ -929,6 +930,13 @@ dependencies = [
  "glibc",
  "libselinux",
  "ncurses",
+]
+
+[[package]]
+name = "rapid7-insight-agent"
+version = "0.1.0"
+dependencies = [
+ "glibc",
 ]
 
 [[package]]

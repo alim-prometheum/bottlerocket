@@ -16,7 +16,7 @@ RefuseManualStop=true
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/early-boot-config
+ExecStart=/usr/bin/early-boot-config --log-level trace
 RemainAfterExit=true
 StandardError=journal+console
 
